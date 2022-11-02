@@ -15,7 +15,7 @@
                 $res2 = $con->query("SELECT * FROM answers where questions_id = ".$rows[$i]['id']);
                 $rows2 = $res2->fetch_all(MYSQLI_ASSOC);
                 for($j=0;$j<count($rows2);$j++){
-                    echo '<input type="checkbox">'.$rows2[$j]["description"].'</br>';
+                    echo '<input type="checkbox" name="'.$i.'-'.$j.'" value="'.$rows2[$j]["is_right"].'">'.$rows2[$j]["description"].'</br>';
                 }
             }
             echo '<input type="submit"/>';
